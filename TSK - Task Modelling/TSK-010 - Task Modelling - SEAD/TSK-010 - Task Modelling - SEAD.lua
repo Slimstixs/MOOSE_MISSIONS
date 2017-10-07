@@ -17,11 +17,11 @@ CommandCenter = COMMANDCENTER:New( HQ, "Lima" )
 Scoring = SCORING:New( "Detect Demo" )
 
 Mission = MISSION
-  :New( CommandCenter, "Overlord", "High", "Attack Detect Mission Briefing", coalition.side.RED )
+  :New( CommandCenter, "Overlord", "High", "SEAD the area!", coalition.side.RED )
   :AddScoring( Scoring )
 
 AttackGroups = SET_GROUP:New():FilterCoalitions( "red" ):FilterPrefixes( "Attack" ):FilterStart()
 
 TargetSetUnit = SET_UNIT:New():FilterCoalitions("blue"):FilterPrefixes("Target"):FilterStart()
 
-TaskSEAD = TASK_SEAD:New(Mission,AttackGroups,"SEAD",TargetSetUnit)
+TaskSEAD = TASK_A2G_SEAD:New(Mission,AttackGroups,"SEAD",TargetSetUnit)
